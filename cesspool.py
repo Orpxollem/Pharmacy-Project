@@ -15,11 +15,13 @@ curs = database.cursor
 
 def shop():
     rots = Tk()
+    rots.title('Shop')
 
-    container = Canvas(rots)
+    container = Canvas(rots, width=1200, height=700)
 
     frame = ttk.Frame(container, padding='3 3 12 12')
     frame.grid(column=0, row=0, sticky=(W, E, S, N))
+    #canvas = Canvas(frame, width=800, height=500)
 
     #Adds scroll bars to the window
 
@@ -141,7 +143,7 @@ def shop():
         b.config(command=lambda num1=hert, num2=hert2, num3=number: add_item(num1, num2, num3))
         b.grid(column=2, row=rew + 6, sticky=W)
 
-        '''Gets the last row number and reassigns *rew(which is serving as te current row number) so items can be
+        '''Gets the last row number and reassigns *rew(which is serving as the current row number) so items can be
         added to the window in a loop without having to add items to the window individually'''
 
         info = last.grid_info()
@@ -181,11 +183,13 @@ def shop():
 
 def cart():
     top = Tk()
+    top.title('Cart')
 
-    container = Canvas(top)
+    container = Canvas(top, width=800, height=450)
 
     frame = ttk.Frame(container, padding='3 3 12 12')
     frame.grid(column=0, row=0, sticky=(W, E, S, N))
+
 
     horizonscroll = Scrollbar(top)
     verticalscroll = Scrollbar(top)
@@ -435,7 +439,7 @@ def cart():
     Label(frame, text=total, font=15).grid(column=6, row=rew + 3, sticky=W)
     Label(frame, text='Final Total = ', font=15).grid(column=5, row=rew + 3, sticky=(W, E))
     Label(frame, text='          ').grid(column=2, row=rew + 4, sticky=(W, E))
-    Button(frame, text='Home', font=15, command=back).grid(column=1, row=1, sticky=E)
+    Button(frame, text='< Home', font=15, command=back).grid(column=1, row=1, sticky=E)
     Button(frame, text='Proceed To Checkout', font=15, command=buy).grid(column=6, row=rew + 5, sticky=(W, E))
 
     container.update_idletasks()
