@@ -9,9 +9,12 @@ import recess
 
 def home():
     top = Tk()
+    top.title("Admin")
 
     frame = ttk.Frame(top, padding='3 3 12 12')
     frame.grid(column=0, row=0, sticky=(N, W, E, S))
+    canvas = Canvas(frame, width=500, height=300)
+    canvas.grid(columnspan=4, column=2, row=1)
 
     canvas = Canvas(frame, width=500, height=300)
     canvas.grid(columnspan=4, column=2, row=1)

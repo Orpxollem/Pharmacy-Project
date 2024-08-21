@@ -15,7 +15,7 @@ conn = database.connect
 
 def customer_login():
     root3 = Tk()
-#    root3.geometry('{0}x{1}+0+0'.format(root3.winfo_screenwidth(), root3.winfo_screenheight()))
+    root3.title("Login")
 
     mainframe = ttk.Frame(root3, padding='3 3 12 12')
     mainframe.grid(column=0, row=0, sticky=(N, W, E, S))

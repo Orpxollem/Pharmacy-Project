@@ -12,6 +12,7 @@ import adminhome
 
 def admin_login():
     root = Tk()
+    root.title("Admin Login")
     #full screen geometry
 #    root.geometry('{0}x{1}+0+0'.format(root.winfo_screenwidth(), root.winfo_screenheight()))
 

@@ -6,7 +6,7 @@ import re
 from tkinter import messagebox
 import adminhome
 
-letter = '\w+'
+letter = '/w+'
 
 con = database.connect
 conn = IDdatabase.con
@@ -17,8 +17,9 @@ cur = IDdatabase.curs
 
 def manage():
     root = Tk()
+    root.title('Inventory')
 
-    container = Canvas(root)
+    container = Canvas(root, width=800, height=500)
 
     frame = ttk.Frame(container, padding='3 3 12 12')
     frame.grid(column=0, row=0, sticky=(W, E, S, N))
@@ -184,10 +185,9 @@ def manage():
 #Creates a window where the admin can take out customers from the database
 def approve():
     root = Tk()
+    root.title('User Management')
 
-    root.geometry('{0}x{1}+0+0'.format(root.winfo_screenwidth(), root.winfo_screenheight()))
-
-    container = Canvas(root)
+    container = Canvas(root, width=800, height=500)
 
     frame = ttk.Frame(container, padding='3 3 12 12')
     frame.grid(column=0, row=0, sticky=(W, E, S, N))
@@ -323,8 +323,9 @@ def approve():
 #Creates a page with all receipts and their details
 def history():
     main = Tk()
+    main.title('Purchase History')
 
-    container = Canvas(main, bg='Grey')
+    container = Canvas(main, width=1000, height=750, bg='Grey')
 
     frame = Frame(container, bg='Grey')
     frame.grid(column=0, row=0, sticky=(W, E, S, N))
@@ -434,7 +435,9 @@ def history():
         else:
             pass
 
-    Button(frame, text='Home', width=10, borderwidth=3, command=homee).grid(column=4, row = rew + 2)
+    Button(frame, text='Home', width=10, borderwidth=3, command=homee).grid(column=1, row=0)
+    Button(frame, text='Home', width=10, borderwidth=3, command=homee).grid(column=3, row=rew + 2)
+
 
     container.update_idletasks()
     container.config(scrollregion=frame.bbox())

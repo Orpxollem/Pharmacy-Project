@@ -13,6 +13,7 @@ curs = database.cursor
 #Provides a receipt based on items in the cart
 def payment():
     main = Tk()
+    main.title("Check_Out")
 
     main.geometry('{0}x{1}+0+0'.format(main.winfo_screenwidth(), main.winfo_screenheight()))
 
